@@ -134,11 +134,9 @@ yumeko-language/
 
 ## Why I Built This
 
-Created to demonstrate:
-- Understanding of **linguistic structures** (morphology, phonetics)
-- **Python programming** (classes, dictionaries, string manipulation)
-- **NLP concepts** (tokenization, pattern matching, grammar rules)
-- **Creative problem-solving** in language design
+Building on my academic background in linguistics, this project aims to bridge theoretical language analysis and computational implementation. 
+it explores how linguistic structures can be formalized and modeled programmatically.
+
 
 ---
 
@@ -154,16 +152,5 @@ Created to demonstrate:
 - [ ] Add text-to-speech for pronunciation
 - [ ] Integration with NLP sentiment analysis project
 
----
 
-## Author
-
-**[Your Name]**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
----
-
-**Built to explore language structure and demonstrate NLP skills** 🌸
 
