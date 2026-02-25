@@ -367,7 +367,7 @@ def main():
     print("="*60)
     print("\nFeatures:")
     print("  1. English → Kirena translation")
-    print("  2. Yumeko → English translation")
+    print("  2. Kirena → English translation")
     print("  3. Grammar analysis")
     print("  4. Random word generator")
     print("\nType 'quit' to exit\n")
