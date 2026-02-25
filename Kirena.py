@@ -1,5 +1,5 @@
 """
-YUMEKO LANGUAGE - A Constructed Language for NLP Practice
+Kirena LANGUAGE - A Constructed Language for NLP Practice
 Created by ME
 
 Linguistic Features:
@@ -13,7 +13,7 @@ import random
 # 1. CORE VOCABULARY 
 # ============================================================
 
-YUMEKO_DICT = {
+KIRENA_DICT = {
     # Nouns (end in -a or -o)
     "water": "chiruka",
     "sun": "tameno",
@@ -240,8 +240,8 @@ GRAMMAR_RULES = {
 # ============================================================
 # 3. PHONETIC PATTERN GENERATOR
 # ============================================================
-class YumekoGenerator: 
-    """ Generate new words based on YUMEKO phonetic patterns """
+class KirenaGenerator: 
+    """ Generate new words based on Kirena phonetic patterns """
 
     CONSONANTS = ['k', 's', 't', 'n', 'h', 'm', 'y', 'r', 'w', 
                   'p', 'z', 'ch', 'f']
@@ -250,57 +250,57 @@ class YumekoGenerator:
     @staticmethod
     def generate_noun():
         """Generate japanese-style noun"""
-        c1= random.choice(YumekoGenerator.CONSONANTS)
-        v1= random.choice(YumekoGenerator.VOWELS)
-        c2= random.choice(YumekoGenerator.CONSONANTS)
-        v2= random.choice(YumekoGenerator.VOWELS)
+        c1= random.choice(KirenaGenerator.CONSONANTS)
+        v1= random.choice(KirenaGenerator.VOWELS)
+        c2= random.choice(KirenaGenerator.CONSONANTS)
+        v2= random.choice(KirenaGenerator.VOWELS)
         ending = random.choice(['a', 'o', 'ka', 'no', 'ma'])
         return f"{c1}{v1}{c2}{v2}{ending}"
     
     @staticmethod
     def generate_verb():
         """Generate japanese-style verb ending with -ri"""
-        c1= random.choice(YumekoGenerator.CONSONANTS)
-        v1= random.choice(YumekoGenerator.VOWELS)
-        c2= random.choice(YumekoGenerator.CONSONANTS)
-        v2= random.choice(YumekoGenerator.VOWELS)
+        c1= random.choice(KirenaGenerator.CONSONANTS)
+        v1= random.choice(KirenaGenerator.VOWELS)
+        c2= random.choice(KirenaGenerator.CONSONANTS)
+        v2= random.choice(KirenaGenerator.VOWELS)
         return f"{c1}{v1}{c2}{v2}ri"
     
     @staticmethod
     def generate_adjective():
         """Generate japanese-style adjective ending with -ne"""
-        c1= random.choice(YumekoGenerator.CONSONANTS)
-        v1= random.choice(YumekoGenerator.VOWELS)
-        c2= random.choice(YumekoGenerator.CONSONANTS)
-        v2= random.choice(YumekoGenerator.VOWELS)
+        c1= random.choice(KirenaGenerator.CONSONANTS)
+        v1= random.choice(KirenaGenerator.VOWELS)
+        c2= random.choice(KirenaGenerator.CONSONANTS)
+        v2= random.choice(KirenaGenerator.VOWELS)
         return f"{c1}{v1}{c2}{v2}ne"
     
 # ============================================================
 # 4. ADVANCED TRANSLATOR
 # ============================================================
 
-class YumekoTranslator:
-    """Bidirectional English ↔ Yumiko translator with grammar"""
+class KirenaTranslator:
+    """Bidirectional English ↔ Kirena translator with grammar"""
 
     def __init__(self):
-        self.en_to_yu = YUMEKO_DICT
-        self.yu_to_en = {v: k for k, v in YUMEKO_DICT.items()}
+        self.en_to_ki = KIRENA_DICT
+        self.ki_to_en = {v: k for k, v in KIRENA_DICT.items()}
 
-    def translate_to_yumeko(self, text):
-        """English → Yumiko with grammar rules"""
+    def translate_to_kirena(self, text):
+        """English → Kirena with grammar rules"""
         words = text.lower().split()
         translated = []
 
         for i, word in enumerate(words):
-            if word.endswith('s') and word[:-1] in self.en_to_yu:
-                base= self.en_to_yu[word[:-1]]
+            if word.endswith('s') and word[:-1] in self.en_to_ki:
+                base= self.en_to_ki[word[:-1]]
                 translated.append(base + 'ko')
-            elif word.endswith('ed') and word[:-2] in self.en_to_yu:
-                base = self.en_to_yu[word[:-2]]
+            elif word.endswith('ed') and word[:-2] in self.en_to_ki:
+                base = self.en_to_ki[word[:-2]]
                 if base.endswith('ri'):
                     translated.append(base[:-2] + 'ta')
-            elif word in self.en_to_yu:
-                translated.append(self.en_to_yu[word])
+            elif word in self.en_to_ki:
+                translated.append(self.en_to_ki[word])
             else:
                 translated.append(f"[{word}]")
                 
@@ -308,33 +308,33 @@ class YumekoTranslator:
 
 
     def translate_to_english(self, text):
-        """Yumiko → English"""
+        """Kirena → English"""
         words = text.lower().split()
         translated = []
 
         for word in words:
-            if word.endswith('ko') and word[:-2] in self.yu_to_en:
-                translated.append(self.yu_to_en[word[:-2]] + 's')
-            elif word.endswith('ta') and word[:-2] + 'ri' in self.yu_to_en:
-                translated.append(self.yu_to_en[word[:-2] + 'ri'] + 'ed')
-            elif word.endswith('ru') and word[:-2] + 'ri' in self.yu_to_en:
-                translated.append(self.yu_to_en[word[:-2] + 'ri'] + 's')
+            if word.endswith('ko') and word[:-2] in self.ki_to_en:
+                translated.append(self.ki_to_en[word[:-2]] + 's')
+            elif word.endswith('ta') and word[:-2] + 'ri' in self.ki_to_en:
+                translated.append(self.ki_to_en[word[:-2] + 'ri'] + 'ed')
+            elif word.endswith('ru') and word[:-2] + 'ri' in self.ki_to_en:
+                translated.append(self.ki_to_en[word[:-2] + 'ri'] + 's')
             elif word in self.yu_to_en:
-                translated.append(self.yu_to_en[word])
+                translated.append(self.ki_to_en[word])
             else:
                 translated.append(f"[{word}]")
                 
         return ' '.join(translated)
 
 
-    def analyze_grammar(self, yumeko_text): 
+    def analyze_grammar(self, kirena_text): 
         """Analyze grammar of a Yumiko sentence"""
-        words = yumeko_text.split()
+        words = kirena_text.split()
         analysis = []
 
         for word in words:
-            if word in self.yu_to_en:
-                base= self.yu_to_en[word]
+            if word in self.ki_to_en:
+                base= self.ki_to_en[word]
                 if word.endswith ('a') or word.endswith('o'):
                     analysis.append(f"{word} (noun: {base})")
                 elif word.endswith('ri'):
@@ -359,14 +359,14 @@ class YumekoTranslator:
     # ============================================================
 
 def main():
-    translator= YumekoTranslator()
-    generator = YumekoGenerator()
+    translator= KirenaTranslator()
+    generator = KirenaGenerator()
 
     print("="*60)
-    print("🌸 YUMEKO LANGUAGE - Constructed Language Demo 🌸")
+    print("🌸 KIRENA LANGUAGE - Constructed Language Demo 🌸")
     print("="*60)
     print("\nFeatures:")
-    print("  1. English → Yumeko translation")
+    print("  1. English → Kirena translation")
     print("  2. Yumeko → English translation")
     print("  3. Grammar analysis")
     print("  4. Random word generator")
@@ -381,16 +381,16 @@ def main():
               break
        if choice == '1':
            text = input("\nEnter English text: ")
-           result = translator.translate_to_yumeko(text)
-           print(f"Yumeko: {result}")
+           result = translator.translate_to_kirena(text)
+           print(f"Kirena: {result}")
 
        elif choice == '2':
-           text = input("\nEnter Yumeko text: ")
+           text = input("\nEnter Kirena text: ")
            result = translator.translate_to_english(text)
            print(f"English: {result}")
 
        elif choice == '3':
-           text = input("\nEnter Yumeko text to analyze: ")
+           text = input("\nEnter Kirena text to analyze: ")
            analysis = translator.analyze_grammar(text)
            print(f"Grammar Analysis:\n{analysis}")  
  
