@@ -1,5 +1,5 @@
-# MyLanguageYumeko
-# Yumeko Language - A Constructed Language Translator
+# MyLanguageKirena
+# Kirena Language - A Constructed Language Translator
 
 A Japanese-inspired constructed language (conlang) with a bidirectional translator, grammar analyzer, and word generator.
 
@@ -9,21 +9,21 @@ A Japanese-inspired constructed language (conlang) with a bidirectional translat
 
 ## What This Does
 
-Yumeko is a completely invented language with:
+Kirena is a completely invented language with:
 - Japanese-inspired phonetics (soft, melodic sounds)
 - Consistent grammar rules (suffixes modify meaning)
 - 200+ word vocabulary
-- Bidirectional translation (English ↔ Yumeko)
+- Bidirectional translation (English ↔ Kirena)
 
 ---
 
 ## Features
 
-✅ **English → Yumeko Translation**
+✅ **English → Kirena Translation**
 - Handles plurals, verb tenses, and adjectives
 - Unknown words marked with brackets
 
-✅ **Yumeko → English Translation**
+✅ **Kirena → English Translation**
 - Reverse translation with grammar detection
 
 ✅ **Grammar Analyzer**
@@ -31,7 +31,7 @@ Yumeko is a completely invented language with:
 - Detects conjugations (plural, past tense, present tense)
 
 ✅ **Random Word Generator**
-- Creates new words following Yumeko phonetic patterns
+- Creates new words following Kirena phonetic patterns
 
 ---
 
@@ -50,7 +50,7 @@ Yumeko is a completely invented language with:
 
 ## Usage Examples
 
-### Example 1: Translate to Yumeko
+### Example 1: Translate to Kirena
 ```
 Mode: 1
 Enter English text: i love the beautiful flower
@@ -60,14 +60,14 @@ Output: zima yameri [the] yamane miruto
 ### Example 2: Translate to English
 ```
 Mode: 2
-Enter Yumeko text: nokane pikuma 
+Enter Kirena text: nokane pikuma 
 Output: cute cat
 ```
 
 ### Example 3: Analyze Grammar
 ```
 Mode: 3
-Enter Yumeko text: yameri pikuma nosane
+Enter Kirena text: yameri pikuma nosane
 Output:
 yameri (verb: love)
 pikuma (noun: cat)
@@ -89,7 +89,7 @@ Output:
 
 ### Common Words
 ```
-English     Yumeko
+English     Kirena
 -------------------
 water       chiruka
 sun         tameno
@@ -116,8 +116,8 @@ they        yona
 
 ## Project Structure
 ```
-yumeko-language/
-├── Yumeko.py          # Main program
+Kirena-language/
+├── Kirena.py          # Main program
 └── README.md          # This file
 ```
 
